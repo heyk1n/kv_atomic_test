@@ -1,6 +1,6 @@
 const kv = await Deno.openKV();
 
-Deno.serve((request) => {
+Deno.serve(async (request) => {
 	const lastVisited = (await kv.get("lastVisited")).value ?? null;
 	const visits = (await kv.get("visits")).value ?? 0;
 	
