@@ -7,7 +7,7 @@ Deno.serve(async (request) => {
 	const atomic = kv.atomic();
 	
 	const newLastVisited = new Date();
-	atmoic.set(["lastVisited"], newLastVisited);
+	atomic.set(["lastVisited"], newLastVisited);
 	const newVisits = visits + 1;
 	atomic.set(["visits"], newVisits);
 
